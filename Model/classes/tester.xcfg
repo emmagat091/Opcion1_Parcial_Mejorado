@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="model.Cursos">
+      <AppModuleConfig name="17EC7733BCC" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/Resolucion1_ParcialDS" ApplicationName="model.Cursos" jbo.project="model.Model" BC4JConfigName="CursosLocal" JDBCName="Resolucion1_Parcial" DeployPlatform="LOCAL" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
+         <Database JDBCDataSource="java:comp/env/jdbc/Resolucion1_ParcialDS" jbo.SQLBuilder="Oracle" jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="model.Cursos"/>
+         <Tester FullProxyInterfaceName="model.common.Cursos"/>
+         <Custom ns0:LastUsedConfiguration="CursosLocal" ns0:tester_classloader_enabled="true" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="model.Materias">
+      <AppModuleConfig name="17EC77139C6" JDBCName="Resolucion1_Parcial" DeployPlatform="LOCAL" jbo.project="model.Model" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="MateriasLocal" ApplicationName="model.Materias" DBconnection="java:comp/env/jdbc/Resolucion1_ParcialDS">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/Resolucion1_ParcialDS" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="model.Materias"/>
+         <Tester FullProxyInterfaceName="model.common.Materias"/>
+         <Custom ns0:tester_classloader_enabled="true" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

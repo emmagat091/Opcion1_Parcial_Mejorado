@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="MateriasPorCursos.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:decorativeBox id="db1">
+                <f:facet name="top">
+                    <af:panelGridLayout id="pgl1">
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                                <af:button text="Nuevo Curso" id="b1" action="NewCurso"/>
+                                <af:spacer id="s1" width="25"/>
+                                <af:button text="Actualizar Registros" id="b2" partialTriggers="b2"/>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+                <f:facet name="center">
+                    <af:table value="#{bindings.MateriasView1.collectionModel}" var="row"
+                              rows="#{bindings.MateriasView1.rangeSize}"
+                              emptyText="#{bindings.MateriasView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.MateriasView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.MateriasView1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.MateriasView1.rangeSize}"
+                              filterModel="#{bindings.MateriasView1Query.queryDescriptor}" filterVisible="true"
+                              queryListener="#{bindings.MateriasView1Query.processQuery}" varStatus="vs" id="t1"
+                              partialTriggers="::b2">
+                        <af:column sortProperty="#{bindings.MateriasView1.hints.Cursoid.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.MateriasView1.hints.Cursoid.label}" id="c1"
+                                   width="86">
+                            <af:outputText value="#{row.Cursoid}"
+                                           shortDesc="#{bindings.MateriasView1.hints.Cursoid.tooltip}" id="ot1">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.MateriasView1.hints.Cursoid.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.MateriasView1.hints.Nombre.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.MateriasView1.hints.Nombre.label}" id="c2"
+                                   width="155">
+                            <af:outputText value="#{row.Nombre}"
+                                           shortDesc="#{bindings.MateriasView1.hints.Nombre.tooltip}" id="ot2"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.MateriasView1.hints.Duracion.name}" filterable="true"
+                                   sortable="true" headerText="#{bindings.MateriasView1.hints.Duracion.label}" id="c3"
+                                   width="89">
+                            <af:outputText value="#{row.Duracion}"
+                                           shortDesc="#{bindings.MateriasView1.hints.Duracion.tooltip}" id="ot3">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.MateriasView1.hints.Duracion.format}"/>
+                            </af:outputText>
+                        </af:column>
+                    </af:table>
+                </f:facet>
+            </af:decorativeBox>
+        </af:form>
+    </af:document>
+</f:view>

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="NuevoCurso.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:decorativeBox id="db1">
+                <f:facet name="top">
+                    <af:panelGridLayout id="pgl4">
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                <af:button text="Volver" id="b10" action="Back" inlineStyle="color:Red;"/>
+                                <af:spacer id="s1" width="20"/>
+                                <af:button text="Nuevas Materias" id="b11" action="NewMaterias"/>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+                <f:facet name="center">
+                    <af:panelGridLayout id="pgl1">
+                        <af:gridRow height="100%" id="gr1">
+                            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                                <!-- Content -->
+                                <af:panelFormLayout id="pfl1">
+                                    <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
+                                                  required="#{bindings.Id.hints.mandatory}"
+                                                  columns="#{bindings.Id.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Id.hints.precision}"
+                                                  shortDesc="#{bindings.Id.hints.tooltip}" id="it1">
+                                        <f:validator binding="#{bindings.Id.validator}"/>
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.Nombre.inputValue}"
+                                                  label="#{bindings.Nombre.hints.label}"
+                                                  required="#{bindings.Nombre.hints.mandatory}"
+                                                  columns="#{bindings.Nombre.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Nombre.hints.precision}"
+                                                  shortDesc="#{bindings.Nombre.hints.tooltip}" id="it2">
+                                        <f:validator binding="#{bindings.Nombre.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.Duracion.inputValue}"
+                                                  label="#{bindings.Duracion.hints.label}"
+                                                  required="#{bindings.Duracion.hints.mandatory}"
+                                                  columns="#{bindings.Duracion.hints.displayWidth}"
+                                                  maximumLength="#{bindings.Duracion.hints.precision}"
+                                                  shortDesc="#{bindings.Duracion.hints.tooltip}" id="it3">
+                                        <f:validator binding="#{bindings.Duracion.validator}"/>
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Duracion.format}"/>
+                                    </af:inputText>
+                                    <f:facet name="footer">
+                                        <af:panelGroupLayout layout="vertical" id="pgl2">
+                                            <af:panelGroupLayout layout="horizontal" id="pgl3">
+                                                <af:button text="Nuvo Curso" id="b8"
+                                                           actionListener="#{bindings.CreateWithParams.execute}"
+                                                           disabled="#{!bindings.CreateWithParams.enabled}"
+                                                           partialTriggers="b8"/>
+                                                <af:button text="Guardar" id="b7"
+                                                           actionListener="#{bindings.Commit.execute}"/>
+                                                <af:button text="Cancelar" id="b6"
+                                                           actionListener="#{bindings.Rollback.execute}"
+                                                           immediate="true">
+                                                    <af:resetActionListener/>
+                                                </af:button>
+                                                <af:button text="Borrar" id="b9"
+                                                           actionListener="#{bindings.Delete.execute}"
+                                                           disabled="#{!bindings.Delete.enabled}"/>
+                                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                                           disabled="#{!bindings.First.enabled}" partialSubmit="true"
+                                                           id="b1"/>
+                                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                           id="b2"/>
+                                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                           id="b3"/>
+                                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                           id="b4"/>
+                                            </af:panelGroupLayout>
+                                            <af:button text="Submit" id="b5"/>
+                                        </af:panelGroupLayout>
+                                    </f:facet>
+                                </af:panelFormLayout>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+            </af:decorativeBox>
+        </af:form>
+    </af:document>
+</f:view>
