@@ -15,6 +15,10 @@
       <from-outcome>NewCurso</from-outcome>
       <to-activity-id>NuevoCurso</to-activity-id>
     </control-flow-case>
+    <control-flow-case id="__8">
+      <from-outcome>NewMaterias</from-outcome>
+      <to-activity-id>NuevasMaterias</to-activity-id>
+    </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__3">
     <from-activity-id>NuevoCurso</from-activity-id>
@@ -32,6 +36,10 @@
     <control-flow-case id="__7">
       <from-outcome>Back</from-outcome>
       <to-activity-id>MateriasPorCursos</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__9">
+      <from-outcome>NewCurso</from-outcome>
+      <to-activity-id>NuevoCurso</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
 </adfc-config>

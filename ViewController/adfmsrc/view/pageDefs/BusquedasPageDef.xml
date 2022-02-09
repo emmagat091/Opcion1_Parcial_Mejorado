@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="MateriasPorCursosPageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="BusquedasPageDef"
                 Package="view.pageDefs">
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="MateriasView1" RangeSize="25" DataControl="MateriasDataControl" id="MateriasView1Iterator"/>
-    <searchRegion Binds="MateriasView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MateriasView1Query"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="MateriasView1Iterator" id="ImplicitViewCriteriaQuery"/>
   </executables>
   <bindings>
     <tree IterBinding="MateriasView1Iterator" id="MateriasView1">
@@ -14,6 +14,7 @@
         <AttrNames>
           <Item Value="Cursoid"/>
           <Item Value="Nombre"/>
+          <Item Value="Id"/>
           <Item Value="Duracion"/>
         </AttrNames>
       </nodeDefinition>

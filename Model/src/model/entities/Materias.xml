@@ -25,13 +25,16 @@
   </Attribute>
   <Attribute
     Name="Id"
-    IsNotNull="true"
     ColumnName="ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="MATERIAS"
-    PrimaryKey="true">
+    PrimaryKey="true"
+    IsUpdateable="false"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -57,12 +60,16 @@
   </Attribute>
   <Attribute
     Name="Cursoid"
-    IsNotNull="true"
     ColumnName="CURSOID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
-    TableName="MATERIAS">
+    TableName="MATERIAS"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    PrimaryKey="true"
+    RetrievedOnInsert="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -85,6 +92,7 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.entities.Materias.Id"/>
+      <Item Value="model.entities.Materias.Cursoid"/>
     </AttrArray>
   </Key>
   <Key

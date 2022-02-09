@@ -28,7 +28,7 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="Nombre"/>
+      <Item Value="Id"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Nombre"/>
@@ -64,7 +64,8 @@
     EntityAttrName="Cursoid"
     EntityUsage="Materias"
     AliasName="CURSOID"
-    LOVName="LOV_Cursoid">
+    LOVName="LOV_Cursoid"
+    IsUpdateable="while_insert">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -99,11 +100,11 @@
       Name="MateriasViewCriteria_row_0"
       UpperColumns="1">
       <ViewCriteriaItem
-        Name="MateriasViewCriteria_MateriasViewCriteria_row_0_Cursoid"
-        ViewAttribute="Cursoid"
+        Name="Nombre"
+        ViewAttribute="Nombre"
         Operator="="
         Conjunction="AND"
-        Value="CURSOS.ID"
+        Value="CURSOS.NOMBRE"
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>

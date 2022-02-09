@@ -11,7 +11,7 @@
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
                                 <af:button text="Nuevo Curso" id="b1" action="NewCurso"/>
                                 <af:spacer id="s1" width="25"/>
-                                <af:button text="Actualizar Registros" id="b2" partialTriggers="b2"/>
+                                <af:button text="Nueva Materia" id="b2" partialTriggers="b2" action="NewMaterias"/>
                             </af:gridCell>
                         </af:gridRow>
                     </af:panelGridLayout>
@@ -20,33 +20,30 @@
                     <af:table value="#{bindings.MateriasView1.collectionModel}" var="row"
                               rows="#{bindings.MateriasView1.rangeSize}"
                               emptyText="#{bindings.MateriasView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                              rowBandingInterval="0"
-                              selectedRowKeys="#{bindings.MateriasView1.collectionModel.selectedRow}"
-                              selectionListener="#{bindings.MateriasView1.collectionModel.makeCurrent}"
-                              rowSelection="single" fetchSize="#{bindings.MateriasView1.rangeSize}"
+                              rowBandingInterval="0" fetchSize="#{bindings.MateriasView1.rangeSize}"
                               filterModel="#{bindings.MateriasView1Query.queryDescriptor}" filterVisible="true"
-                              queryListener="#{bindings.MateriasView1Query.processQuery}" varStatus="vs" id="t1"
-                              partialTriggers="::b2">
+                              queryListener="#{bindings.MateriasView1Query.processQuery}" varStatus="vs" id="t1">
                         <af:column sortProperty="#{bindings.MateriasView1.hints.Cursoid.name}" filterable="true"
-                                   sortable="true" headerText="#{bindings.MateriasView1.hints.Cursoid.label}" id="c1"
-                                   width="86">
-                            <af:outputText value="#{row.Cursoid}"
-                                           shortDesc="#{bindings.MateriasView1.hints.Cursoid.tooltip}" id="ot1">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.MateriasView1.hints.Cursoid.format}"/>
-                            </af:outputText>
+                                   sortable="true" headerText="Nombre Curso" id="c1" width="141">
+                            <af:selectOneChoice value="#{row.bindings.Cursoid.inputValue}"
+                                                label="#{row.bindings.Cursoid.label}"
+                                                required="#{bindings.MateriasView1.hints.Cursoid.mandatory}"
+                                                shortDesc="#{bindings.MateriasView1.hints.Cursoid.tooltip}"
+                                                readOnly="true" id="soc1">
+                                <f:selectItems value="#{row.bindings.Cursoid.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.Cursoid.validator}"/>
+                            </af:selectOneChoice>
                         </af:column>
                         <af:column sortProperty="#{bindings.MateriasView1.hints.Nombre.name}" filterable="true"
-                                   sortable="true" headerText="#{bindings.MateriasView1.hints.Nombre.label}" id="c2"
-                                   width="155">
+                                   sortable="true" headerText="Nombre Materia" id="c2" width="171">
                             <af:outputText value="#{row.Nombre}"
-                                           shortDesc="#{bindings.MateriasView1.hints.Nombre.tooltip}" id="ot2"/>
+                                           shortDesc="#{bindings.MateriasView1.hints.Nombre.tooltip}" id="ot1"/>
                         </af:column>
                         <af:column sortProperty="#{bindings.MateriasView1.hints.Duracion.name}" filterable="true"
                                    sortable="true" headerText="#{bindings.MateriasView1.hints.Duracion.label}" id="c3"
-                                   width="89">
+                                   width="116">
                             <af:outputText value="#{row.Duracion}"
-                                           shortDesc="#{bindings.MateriasView1.hints.Duracion.tooltip}" id="ot3">
+                                           shortDesc="#{bindings.MateriasView1.hints.Duracion.tooltip}" id="ot2">
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.MateriasView1.hints.Duracion.format}"/>
                             </af:outputText>

@@ -75,7 +75,7 @@
       <property
          name="fromOutcome">NewMaterias</property>
       <property
-         name="sdm:polyPoints">B50,622.34863,157.74707,628.0,213.24707,T50</property>
+         name="sdm:polyPoints">B44,618.84863,158.10254,624.5,213.24707,T44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -85,6 +85,26 @@
       <property
          name="fromOutcome">Back</property>
       <property
-         name="sdm:polyPoints">L50,587.0,267.24707,472.34863,276.44824,R50</property>
+         name="sdm:polyPoints">L46,586.71924,263.74707,472.34863,272.94824,R46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="View2"
+      to="View6">
+      <property
+         name="fromOutcome">NewMaterias</property>
+      <property
+         name="sdm:polyPoints">R54,472.62906,279.94824,587.0,270.74707,L54</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase10"
+      from="View6"
+      to="View3">
+      <property
+         name="fromOutcome">NewCurso</property>
+      <property
+         name="sdm:polyPoints">T56,631.5,212.89046,625.84863,157.74707,B56</property>
    </ControlFlowCase>
 </SDM>

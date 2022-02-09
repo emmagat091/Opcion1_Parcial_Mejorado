@@ -5,7 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="MateriasView1" RangeSize="25" DataControl="MateriasDataControl" id="MateriasView1Iterator"/>
-    <searchRegion Binds="MateriasView1Iterator" Criteria="MateriasPorCursosViewCriteria"
+    <searchRegion Binds="MateriasView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MateriasView1Query"/>
   </executables>
   <bindings>

@@ -5,11 +5,13 @@
     <page path="/MateriasPorCursos.jsf" usageId="view_MateriasPorCursosPageDef"/>
     <page path="/NuevoCurso.jsf" usageId="view_NuevoCursoPageDef"/>
     <page path="/NuevasMaterias.jsf" usageId="view_NuevasMateriasPageDef"/>
+    <page path="/Busquedas.jsf" usageId="view_BusquedasPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_MateriasPorCursosPageDef" path="view.pageDefs.MateriasPorCursosPageDef"/>
     <page id="view_NuevoCursoPageDef" path="view.pageDefs.NuevoCursoPageDef"/>
     <page id="view_NuevasMateriasPageDef" path="view.pageDefs.NuevasMateriasPageDef"/>
+    <page id="view_BusquedasPageDef" path="view.pageDefs.BusquedasPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="MateriasDataControl" Package="model"
