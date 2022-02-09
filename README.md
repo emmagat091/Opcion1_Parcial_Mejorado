@@ -11,7 +11,12 @@ Integrante: **Gatica , Emmanuel David.**
 
 #### **Aplicación Utilizada : Custom Application.**
 
-#### Mejoras : se incorporaron mejoras visuales, y botones para optimizar acciones. Además se incorporo una pagina para nuevas materias.
+#### Mejoras : 
+
+- Se incorporaron mejoras visuales a las páginas.
+- Botones para optimizar acciones dentro de las mismas.
+- Nueva página para agregar materias.
+- Incorporación del autoincremental en ID cursos y materias, evitando así incorporar los Id manualmente.
 
 
 Procedimientos: 
